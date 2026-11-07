@@ -1,0 +1,159 @@
+/* Базовые цвета Реал Мадрид */
+:root {
+    --rm-blue: #04193d;
+    --rm-gold: #eebd4e;
+    --rm-white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main, .content-wrapper {
+    flex: 1;
+}
+
+/* Стилизация компонентов Bootstrap под цвета клуба */
+.rm-navbar {
+    background-color: var(--rm-blue);
+}
+
+.rm-title {
+    color: var(--rm-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.btn-warning {
+    background-color: var(--rm-gold);
+    border: none;
+}
+.btn-warning:hover {
+    background-color: #d1a33a;
+}
+
+/* Секция "СОСТАВ КОМАНДЫ" */
+.custom-squad-section {
+    padding: 60px 20px;
+    background-color: #f0f2f5;
+}
+.custom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.custom-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--rm-blue);
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.custom-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+.player-card {
+    background-color: var(--rm-white);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    isolation: isolate; /* ИСПРАВЛЕНИЕ: не дает фото вылезать за рамки */
+}
+.player-info {
+    padding: 20px;
+    text-align: center;
+}
+.player-name {
+    font-size: 1.2rem;
+    margin: 0 0 5px 0;
+    color: var(--rm-blue);
+}
+.player-role {
+    color: #666;
+    margin: 0;
+    font-size: 0.9rem;
+}
+.player-stats {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    background-color: rgba(4, 25, 61, 0.9);
+    color: var(--rm-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.player-card:hover .player-stats {
+    opacity: 1;
+}
+.player-photo {
+    position: relative;
+    height: 250px;
+    background-color: #212529;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-top-left-radius: 10px; /* ИСПРАВЛЕНИЕ: скругление углов для фото */
+    border-top-right-radius: 10px; /* ИСПРАВЛЕНИЕ: скругление углов для фото */
+}
+.player-photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom center; 
+}
+@media (min-width: 768px) {
+    .custom-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    .player-name { font-size: 1.5rem; }
+}
+@media (min-width: 1280px) {
+    .custom-grid { grid-template-columns: repeat(3, 1fr); gap: 40px; }
+    .custom-heading { font-size: 2.5rem; margin-bottom: 50px; }
+}
+
+.rm-table-header {
+    background-color: var(--rm-blue);
+    border-color: var(--rm-blue);
+}
+.form-label.fw-bold {
+    color: var(--rm-blue);
+}
+
+/* JQuery Effects / Hover states */
+.store-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.store-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15) !important;
+}
+.history-era-title {
+    cursor: pointer;
+    user-select: none;
+}
+.history-era-title:hover {
+    color: var(--rm-gold) !important;
+}
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+}

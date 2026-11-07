@@ -1,0 +1,135 @@
+/* Bernabéu night theme — loaded after style.css */
+:root{--ink:#04193d;--ink2:#0a2a5e;--gold:#eebd4e;--line:rgba(238,189,78,.35)}
+body{font-family:'Manrope','Segoe UI',sans-serif;background:#f4f5f8;color:#1b2333}
+h1,h2,h3,.display-4,.rm-title,.navbar-brand{font-family:'Bebas Neue','Oswald',Impact,sans-serif;letter-spacing:.04em;font-weight:400}
+.rm-title{font-size:2.6rem;color:var(--ink);text-transform:none;font-weight:400;position:relative;padding-bottom:.6rem}
+.rm-title::after{content:"";display:block;width:64px;height:4px;background:var(--gold);margin:.4rem auto 0}
+.navbar-brand{font-size:1.7rem}
+.rm-navbar{background:rgba(4,25,61,.92)!important;backdrop-filter:blur(8px);border-bottom:2px solid var(--gold)}
+.rm-navbar .nav-link{color:#cfd8ea;font-weight:600;padding:.5rem 1rem;position:relative}
+.rm-navbar .nav-link.active,.rm-navbar .nav-link:hover{color:var(--gold)}
+.rm-navbar .nav-link.active::after{content:"";position:absolute;left:1rem;right:1rem;bottom:2px;height:2px;background:var(--gold)}
+
+/* Hero: stadium floodlights + pitch stripes */
+.hero-night{position:relative;overflow:hidden;color:#fff;padding:5rem 0 4.5rem;
+background:radial-gradient(ellipse 60% 80% at 75% 0%,rgba(238,189,78,.28),transparent 60%),
+repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 70px,transparent 70px 140px),
+linear-gradient(180deg,#04193d,#020d22)}
+.hero-night::after{content:"";position:absolute;left:50%;bottom:-180px;width:360px;height:360px;margin-left:-180px;border:2px solid var(--line);border-radius:50%;pointer-events:none}
+.hero-title{font-size:clamp(4rem,12vw,9rem);line-height:.88;margin:0;color:transparent;-webkit-text-stroke:2px var(--gold)}
+.hero-title span{display:block;color:#fff;-webkit-text-stroke:0}
+.hero-night .lead{color:#b9c6e0;max-width:34rem}
+.crest{filter:drop-shadow(0 0 40px rgba(238,189,78,.45));animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-12px)}}
+.countdown{display:flex;gap:.75rem;margin:1.5rem 0}
+.countdown div{min-width:78px;text-align:center;padding:.6rem .4rem;border:1px solid var(--line);border-radius:6px;background:rgba(255,255,255,.05)}
+.countdown b{display:block;font:400 2.4rem/1 'Bebas Neue',sans-serif;color:var(--gold)}
+.countdown small{color:#9fb0d0;font-size:.75rem}
+.next-label{color:#9fb0d0;font-size:.9rem;margin:0}
+.last-match{display:inline-block;border-left:4px solid var(--gold);padding:.4rem 1rem;background:rgba(255,255,255,.07);margin-bottom:1.5rem}
+.btn-warning{color:#04193d!important;font-weight:700;border-radius:4px;padding-inline:1.6rem}
+.btn-warning:hover{background:#fff!important}
+
+/* Cards, tables, forms */
+.store-card{border-radius:6px!important;border-top:3px solid transparent!important}
+.store-card:hover{border-top-color:var(--gold)!important}
+.rm-table-header th{font-family:'Bebas Neue',sans-serif;font-weight:400;letter-spacing:.06em;font-size:1.15rem}
+.form-control:focus,.form-select:focus{border-color:var(--gold);box-shadow:0 0 0 .2rem rgba(238,189,78,.3)}
+.era-section{border-left:4px solid var(--gold)!important;background:#fff!important}
+.carousel-inner{background:linear-gradient(135deg,#04193d,#0a2a5e)!important}
+.player-name{font-family:'Bebas Neue',sans-serif;letter-spacing:.04em;font-weight:400}
+footer.rm-navbar{border-top:2px solid var(--gold);border-bottom:0}
+.cart-bounce{animation:pop .35s}
+@keyframes pop{50%{transform:scale(1.04)}}
+a:focus-visible,button:focus-visible,.history-era-title:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* Real-data additions */
+.shirt-no{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:400 9rem/1 'Bebas Neue',sans-serif;color:transparent;-webkit-text-stroke:2px var(--gold);background:linear-gradient(160deg,#0a2a5e,#04193d)}
+.custom-grid{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))!important;gap:24px!important}
+.player-info .small{color:#555}
+.badge-home{background:var(--ink);color:var(--gold)}
+.badge-away{background:#e9ecf2;color:#333}
+.src{font-size:.8rem;color:#9fb0d0}.src a{color:var(--gold)}
+.fact-box{border-left:4px solid var(--gold);background:#fff;padding:1rem 1.25rem}
+.stat-big{font:400 4.5rem/1 'Bebas Neue',sans-serif;color:var(--gold)}
+
+.player-stats{height:280px;z-index:2}
+.product-img{position:relative;height:210px;display:flex;align-items:center;justify-content:center;font-size:5rem;border:1px solid #e3e6ee;border-radius:6px;overflow:hidden}
+.product-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:8px;background:inherit}
+
+/* Wow layer */
+.hero-title{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+.hero-title span{animation:rise .9s .15s cubic-bezier(.2,.8,.2,1) both}
+.hero-night .lead,.hero-night .last-match{animation:rise .8s .35s both}
+.hero-night .countdown,.hero-night .next-label,.hero-night .btn{animation:rise .8s .5s both}
+@keyframes rise{from{opacity:0;transform:translateY(36px)}}
+.stats-strip{background:var(--ink);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);color:#fff}
+.stats-strip .stat{padding:1.6rem 1rem;text-align:center}
+.stats-strip .stat b{font:400 4.2rem/1 'Bebas Neue',sans-serif;color:var(--gold);display:block}
+.stats-strip small{color:#9fb0d0}
+.player-card{transition:transform .3s,box-shadow .3s}
+.player-card:hover{transform:translateY(-8px);box-shadow:0 14px 30px rgba(4,25,61,.35),0 0 0 2px var(--gold)}
+.filter-btn{border:1px solid var(--ink);background:#fff;color:var(--ink);font-weight:700;border-radius:999px;padding:.35rem 1.1rem;margin:0 .2rem .5rem}
+.filter-btn.active,.filter-btn:hover{background:var(--ink);color:var(--gold)}
+#matchInfo{display:none;border-left:4px solid var(--gold);background:#f4f5f8;padding:.6rem .9rem;margin-top:.6rem;font-size:.9rem}
+.rm-toast{display:none;position:fixed;left:20px;bottom:20px;z-index:100;background:var(--ink);color:#fff;border-left:4px solid var(--gold);padding:.8rem 1.2rem;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+
+/* Stadium scene */
+.hero-night{padding-bottom:13rem}
+.hero-night::after{display:none}
+.hero-night>.container{position:relative;z-index:2}
+.stadium{position:absolute;left:0;right:0;bottom:0;z-index:1;line-height:0}
+.stadium svg{width:100%;height:auto;min-height:150px;display:block}
+.crowd{animation:twinkle 3s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.45}to{opacity:1}}
+.ball-run{animation:run 9s linear infinite}
+@keyframes run{from{transform:translateX(-60px)}to{transform:translateX(1260px)}}
+.ball-bounce{animation:bounce .9s infinite}
+@keyframes bounce{0%,100%{transform:translateY(0);animation-timing-function:cubic-bezier(.2,.6,.4,1)}50%{transform:translateY(-48px);animation-timing-function:cubic-bezier(.6,0,.8,.4)}}
+.ball-shadow{animation:shade .9s infinite;transform-origin:0 268px}
+@keyframes shade{0%,100%{transform:scale(1)}50%{transform:scale(.55)}}
+.ball-spin{animation:spin 1s linear infinite;transform-origin:0 250px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ball-run{transform:translateX(600px)}}
+/* Opponent logos */
+.club{display:inline-flex;align-items:center;gap:.7rem;font-weight:700}
+.club-logo{position:relative;width:42px;height:42px;flex:none}
+.club-logo span{position:absolute;inset:0;border-radius:50%;display:flex;align-items:center;justify-content:center;font:400 1rem 'Bebas Neue',sans-serif;letter-spacing:.04em;color:#fff}
+.club-logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:50%;padding:3px}
+
+/* Bernabéu details */
+.led{animation:ledmove 14s linear infinite}
+@keyframes ledmove{to{transform:translateX(-400px)}}
+.stadium-photo{position:absolute;inset:0;z-index:0;opacity:0;transition:opacity 1s;
+background:linear-gradient(180deg,rgba(2,13,34,.88),rgba(2,13,34,.5) 55%,rgba(2,13,34,.9)),url('images/bernabeu.jpg') center/cover}
+.has-photo .stadium-photo{opacity:1}
+.era-photo,
+.player-photo img,
+.product-img img,
+.club-logo img{object-fit:contain !important}
+
+.player-photo img{object-position:center bottom !important;background:#04193d}
+.era-photo{height:auto !important;max-height:440px;background:#04193d}
+.product-img img{background:#fff}
+.club-logo img{background:#fff}
+/* Round bowl */
+.stadium svg{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 22%);mask-image:linear-gradient(to bottom,transparent 0,#000 22%)}
+.led{animation:ledglow 1.6s ease-in-out infinite alternate}
+@keyframes ledglow{from{opacity:.55}to{opacity:1}}
+.ball-run{animation:run2 9s linear infinite}
+@keyframes run2{0%{transform:translateX(130px);opacity:0}8%{opacity:1}92%{opacity:1}100%{transform:translateX(1070px);opacity:0}}
+/* Светлый фон под цвет студийных фото Реала — убирает темно-синие полосы */
+.player-photo,
+.player-photo .shirt-no {
+    background: #dcd8e8 !important;
+}
+
+/* Выравниваем по голове (сверху) без обрезки лиц */
+.player-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    transform: none !important;
+}
